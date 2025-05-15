@@ -4,11 +4,11 @@ Este proyecto implementa un sistema de gestión de reservas para un complejo dep
 
 ## Contenido
 
-- `database/create_tables.sql`: script para crear las tablas principales del sistema.
-- `database/insert_data.sql`: inserción de datos de ejemplo.
-- `database/example_queries.sql`: consultas SQL útiles para operar sobre el sistema.
-- `docs/descripcion_tablas.md`: explicación técnica de cada tabla.
-- `docs/modelo_datos.png`: imagen (o PDF) del modelo relacional.
+/database
+├── creacion_tablas.sql → Script para crear las tablas de la base de datos
+├── inserciones.sql → Script para insertar datos iniciales
+├── consultas.sql → Consultas SQL útiles para el sistema
+├── eliminacion.sql → Script para eliminar las tablas
 
 ## Requisitos
 
