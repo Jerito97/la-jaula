@@ -5,10 +5,10 @@ Este proyecto implementa un sistema de gestión de reservas para un complejo dep
 ## Contenido
 
 /database
-├── creacion_tablas.sql → Script para crear las tablas de la base de datos
-├── inserciones.sql → Script para insertar datos iniciales
-├── consultas.sql → Consultas SQL útiles para el sistema
-├── eliminacion.sql → Script para eliminar las tablas
+- creacion_tablas.sql → Script para crear las tablas de la base de datos
+- inserciones.sql → Script para insertar datos iniciales
+- consultas.sql → Consultas SQL útiles para el sistema
+- eliminacion.sql → Script para eliminar las tablas
 
 ## Requisitos
 
