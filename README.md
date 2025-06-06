@@ -1,5 +1,5 @@
 # Sistema de Reservas - La Jaula
-Este proyecto implementa un sistema de gestión de reservas completo y eficiente para el complejo deportivo "La Jaula". Desarrollado en Java, permite una administración ágil de usuarios, la configuración detallada de canchas (fútbol y pádel), y un control preciso sobre las reservas, incluyendo la gestión de sus diferentes estados de pago.
+Este proyecto implementa un sistema de gestión de reservas completo y eficiente para el complejo deportivo "La Jaula". Desarrollado en Java, permite una administración ágil de usuarios, la configuración detallada de canchas, y un control preciso sobre las reservas, incluyendo la gestión de sus diferentes estados de pago.
 
 ## Contenido del Proyecto
 ### /database
