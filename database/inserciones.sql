@@ -9,10 +9,10 @@ INSERT INTO usuario (nombre, apellido, email, password, rol) VALUES
 
 -- Inserción de canchas de ejemplo
 INSERT INTO cancha (nombre, tipoCancha, precioPorHora) VALUES
-('Cancha A', 'fútbol 5', 25.00),
-('Cancha B', 'fútbol 7', 35.00),
-('Cancha C', 'padel', 18.00),
-('Cancha D', 'tenis', 22.50);
+('Cancha A', 'fútbol 5', 100000.00),
+('Cancha B', 'fútbol 5', 100000.00),
+('Cancha C', 'padel', 40000.00),
+('Cancha D', 'tenis', 50000.00);
 
 -- Inserción de reservas de ejemplo
 INSERT INTO reserva (fecha, horaInicio, horaFin, estado, idUsuario, idCancha) VALUES
