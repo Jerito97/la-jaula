@@ -27,4 +27,4 @@ Para la correcta ejecución y funcionamiento del sistema, son necesarios los sig
 - MySQL Workbench o cualquier cliente compatible con MySQL.
 - Servidor MySQL (local o remoto).
 - Java Development Kit (JDK) 8 o superior.
-- Driver JDBC para MySQL.
+- Driver JDBC para MySQL. (Es necesario crear las tablas de la BdD previo a ejecutar el Main.java)
