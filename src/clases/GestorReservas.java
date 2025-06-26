@@ -473,9 +473,11 @@ public class GestorReservas {
     public LocalDate seleccionarDia() {
         System.out.println("Seleccione el día:");
         List<LocalDate> diasDisponibles = new ArrayList<>();
-        LocalDate fechaBase = LocalDate.of(2025, 6, 5);
+        // CAMBIO AQUI: Obtener la fecha actual del sistema
+        LocalDate fechaBase = LocalDate.now(); // Obtiene la fecha actual (hoy)
+
         for (int i = 0; i < 7; i++) {
-            diasDisponibles.add(fechaBase.plusDays(i));
+            diasDisponibles.add(fechaBase.plusDays(i)); // Añade hoy y los 6 días siguientes
         }
 
         for (int i = 0; i < diasDisponibles.size(); i++) {
@@ -505,16 +507,33 @@ public class GestorReservas {
     public LocalTime seleccionarHoraInicio(Cancha cancha, LocalDate fecha) {
         System.out.println("Seleccione hora de inicio disponible:");
         List<LocalTime> todasLasHoras = new ArrayList<>();
+        // Las horas de reserva van de 12:00 a 21:00
         for (int i = 12; i <= 21; i++) {
             todasLasHoras.add(LocalTime.of(i, 0));
         }
 
+        // Obtener la hora actual del sistema
+        LocalTime horaActual = LocalTime.now();
+        // Obtener la fecha actual del sistema
+        LocalDate fechaActual = LocalDate.now();
+
         List<LocalTime> horasDisponibles = todasLasHoras.stream()
-                .filter(hora -> !isHoraOcupada(cancha, fecha, hora))
+                .filter(hora -> {
+                    // Si la fecha seleccionada es hoy, filtramos las horas que ya pasaron
+                    if (fecha.isEqual(fechaActual)) {
+                        // Solo mostramos horas que son IGUAL o POSTERIORES a la siguiente hora completa
+                        // Ejemplo: Si son 18:27, la siguiente hora completa es 19:00.
+                        // Entonces, hora.getHour() debe ser >= horaActual.getHour() + 1
+                        return hora.getHour() >= horaActual.getHour() + 1 && !isHoraOcupada(cancha, fecha, hora);
+                    } else {
+                        // Para cualquier otra fecha (futura), no aplicamos este filtro de hora pasada
+                        return !isHoraOcupada(cancha, fecha, hora);
+                    }
+                })
                 .collect(Collectors.toList());
 
         if (horasDisponibles.isEmpty()) {
-            System.out.println("No hay horas de inicio disponibles para esta cancha y fecha.");
+            System.out.println("No hay horas de inicio disponibles para esta cancha y fecha en los horarios válidos.");
             return null;
         }
 
